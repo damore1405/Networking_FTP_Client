@@ -1,6 +1,9 @@
 import java.net.*;
+import java.io.BufferedReader;
 import java.io.Console;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.util.logging.*;
 
 public class driver {
@@ -10,9 +13,8 @@ public class driver {
 	public static void main(String[] args) {
 		
 		//TODO: Maybe make this into a ftp sessions. 
-		int portNumber = 21;
-		String hostname = null;
-		String logFilePath = null;
+		FTPSession ftpSession;
+		String logFilePath;
 		
 		switch(args.length){
 			case 0:
@@ -20,14 +22,13 @@ public class driver {
 				break;
 			case 2: 
 				//We have a server name and a log file
-				hostname = args[0];
+				ftpSession = new FTPSession(args[0]);
 				logFilePath = args[1];
 				break;
 			case 3:
 				//Now we also have a port number, So set the port...
-				hostname = args[0];
 				logFilePath = args[1];
-				portNumber = Integer.parseInt(args[3]);
+				ftpSession = new FTPSession(args[0], Integer.parseInt(args[3]));
 				break;
 			default: System.err.println("Invalid arguments");
 		}
@@ -43,6 +44,34 @@ public class driver {
 		}
 		
 		log.info("testing testing 123, burp");
+		
+		
+//		Okey now we have all we need to test out sending a user request
+		try {
+			Socket socket = new Socket("localhost", 21);
+			PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
+			out.print("USER matt\r\n");
+			out.flush();
+			
+			BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+			System.out.println(in.readLine());
+			out.print("USER matt\r\n");
+			out.flush();
+			System.out.println(in.readLine());
+			out.print("QUIT\r\n");
+			out.flush();
+			socket.close();
+		
+		} catch (UnknownHostException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
 		
 		//Valid arguments, ask now as the user for their username and password
 		
