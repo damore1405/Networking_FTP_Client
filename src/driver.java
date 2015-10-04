@@ -8,13 +8,13 @@ import java.util.logging.*;
 
 public class driver {
 	//Init the logger
-	private static final Logger log = Logger.getLogger(driver.class.getName());
+	private static final Logger log = Logger.getLogger("log");
 	
 	public static void main(String[] args) {
 		
 		//TODO: Maybe make this into a ftp sessions. 
 		FTPSession ftpSession;
-		String logFilePath;
+		String logFilePath = null;
 		
 		switch(args.length){
 			case 0:
@@ -22,26 +22,19 @@ public class driver {
 				break;
 			case 2: 
 				//We have a server name and a log file
+				setUpLogger(args[1]);
 				ftpSession = new FTPSession(args[0]);
 				logFilePath = args[1];
 				break;
 			case 3:
 				//Now we also have a port number, So set the port...
 				logFilePath = args[1];
+				setUpLogger(args[1]);
 				ftpSession = new FTPSession(args[0], Integer.parseInt(args[3]));
 				break;
 			default: System.err.println("Invalid arguments");
 		}
 		
-		try {
-			FileHandler fh = new FileHandler (logFilePath, true);
-			SimpleFormatter formatter = new SimpleFormatter();  
-	        fh.setFormatter(formatter);  
-			log.addHandler(fh);
-		} catch (SecurityException | IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		
 		log.info("testing testing 123, burp");
 		
@@ -86,6 +79,19 @@ public class driver {
 	private static void printUsage(){
 		System.out.println("This will eventually be the help script :3");
 		System.exit(1);
+	}
+	
+	
+	public static void setUpLogger(String logFilePath){
+		try {
+			FileHandler fh = new FileHandler (logFilePath, true);
+			SimpleFormatter formatter = new SimpleFormatter();  
+	        fh.setFormatter(formatter);  
+			log.addHandler(fh);
+		} catch (SecurityException | IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }

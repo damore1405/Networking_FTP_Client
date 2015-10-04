@@ -4,7 +4,7 @@ import java.io.*;
 
 public class FTPSession{
 	
-	private static final Logger log = Logger.getLogger(driver.class.getName());
+	private static final Logger log = Logger.getLogger("log");
 	private static final int FTP_DEFAULT_PORT = 21;
 	private static final String FTP_END_COMMAND = "\r\n";
 	
