@@ -17,26 +17,18 @@ public class driver {
 		String logFilePath = null;
 		
 		switch(args.length){
-			case 0:
-			case 1: printUsage();
-				break;
 			case 2: 
 				//We have a server name and a log file
-				setUpLogger(args[1]);
+				setUpLogger(args[1]);  /* The singleton logger needs to be set up first to be used in the ftp Session */
 				ftpSession = new FTPSession(args[0]);
-				logFilePath = args[1];
 				break;
 			case 3:
 				//Now we also have a port number, So set the port...
-				logFilePath = args[1];
 				setUpLogger(args[1]);
 				ftpSession = new FTPSession(args[0], Integer.parseInt(args[3]));
 				break;
-			default: System.err.println("Invalid arguments");
+			default: printUsage();
 		}
-		
-		
-		log.info("testing testing 123, burp");
 		
 		
 //		Okey now we have all we need to test out sending a user request
@@ -77,6 +69,7 @@ public class driver {
 	 * or when invalid input is given. 
 	 */
 	private static void printUsage(){
+		log.warning("Invalid input entered!");
 		System.out.println("This will eventually be the help script :3");
 		System.exit(1);
 	}
