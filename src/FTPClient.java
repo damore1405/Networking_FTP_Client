@@ -168,7 +168,8 @@ public class FTPClient {
 
         //Check to see if the file exists or not, and create one if it doesn't.
         if (file.exists()) {
-            throw new IOException("File already exists, cannot overwrite");
+            System.err.println("File already exists, cannot overwrite");
+            return;
         } else if (!file.exists()) {
             file.createNewFile();
         }
@@ -183,8 +184,15 @@ public class FTPClient {
             //Make the connection to the port
             Socket listSocket = new Socket(host, port);
 
-            //Send the actual request from the session
-            session.retr(filename);
+            //Send the actual request from the session, delete the created file if its not found on the server
+            try {
+                session.retr(filename);
+            }catch (FTPException e){
+                if(e.getMessage().equalsIgnoreCase("File not Found")){
+                    file.delete();
+                    throw new FTPException("File not Found");
+                }
+            }
 
             BufferedReader dirReader = new BufferedReader(new InputStreamReader(listSocket.getInputStream()));
 
@@ -207,8 +215,16 @@ public class FTPClient {
             ServerSocket serverSocket = new ServerSocket(0);
             actvIpConn(serverSocket.getLocalPort());
 
-            //Call the retr command from the session
-            session.retr(filename);
+            //Send the actual request from the session, delete the created file if its not found on the server
+            try {
+                session.retr(filename);
+            }catch (FTPException e){
+                if(e.getMessage().equalsIgnoreCase("File not Found")){
+                    file.delete();
+                    throw new FTPException("File not Found");
+                }
+            }
+
 
 
             Socket listSocket = serverSocket.accept();
