@@ -13,44 +13,45 @@ public class driver {
 	public static void main(String[] args) {
 		
 		//TODO: Maybe make this into a ftp sessions. 
-		FTPSession ftpSession;
+		FTPClient ftpClient = null;
 		String logFilePath = null;
 		
 		switch(args.length){
 			case 2: 
 				//We have a server name and a log file
 				setUpLogger(args[1]);  /* The singleton logger needs to be set up first to be used in the ftp Session */
-				ftpSession = new FTPSession(args[0]);
+			try {
+				ftpClient = new FTPClient(args[0]);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 				break;
 			case 3:
 				//Now we also have a port number, So set the port...
 				setUpLogger(args[1]);
-				ftpSession = new FTPSession(args[0], Integer.parseInt(args[3]));
+			try {
+				ftpClient = new FTPClient(args[0], Integer.parseInt(args[3]));
+			} catch (NumberFormatException | IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 				break;
 			default: printUsage();
 		}
 		
-		
-//		Okey now we have all we need to test out sending a user request
 		try {
-			Socket socket = new Socket("localhost", 21);
-			PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
-			out.print("USER matt\r\n");
-			out.flush();
-			
-			BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-			System.out.println(in.readLine());
-			out.print("USER matt\r\n");
-			out.flush();
-			System.out.println(in.readLine());
-			out.print("QUIT\r\n");
-			out.flush();
-			socket.close();
-		
-		} catch (UnknownHostException e) {
+			ftpClient.login("cs472", "password");
+		} catch (IOException | FTPException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		try {
+			ftpClient.getFile("file1.txt");
+		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} catch (IOException e) {
+		} catch (FTPException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
