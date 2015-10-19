@@ -1,33 +1,32 @@
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
 import java.net.*;
-import java.util.logging.Handler;
 import java.util.logging.Logger;
 
 
 public class FTPClient {
-	private enum FTPState{
-		auth,passiveCommand,activeCommand
-	}
+	
+	private enum FTPState{ auth , passiveCommand , activeCommand }
+	private enum IPState{ ipv4 , ipv6 }
 	private String host;
 	private FTPState state = FTPState.auth;
+	private IPState ipState;
 	private static final Logger log = Logger.getLogger("log");
 	protected FTPCommandSession session;
 	
 
 	public FTPClient(String hostname) throws UnknownHostException, IOException{
+		ipState = getIpAddressType(hostname);
 		host = hostname;
 		session = new FTPCommandSession(hostname);
 		session.openConnection();
 	}
 	
 	public FTPClient(String hostname, int port) throws UnknownHostException, IOException{
+		ipState = getIpAddressType(hostname);
 		host = hostname;
 		session = new FTPCommandSession(hostname, port);
 		session.openConnection();
@@ -37,7 +36,7 @@ public class FTPClient {
 		
 		session.user(username);
 		session.pass(password);
-		state = FTPState.activeCommand;
+		state = FTPState.passiveCommand;
 		log.info("Login of user " + username + " successful");
 		
 	}
@@ -60,8 +59,10 @@ public class FTPClient {
 		}
 		
 		else if(state == FTPState.activeCommand){
+			
 			String currentDir = session.pwd();
 			ServerSocket serverSocket = new ServerSocket(0);
+			
 			session.port(serverSocket.getLocalPort());
 			System.out.println(serverSocket.getLocalPort());
 			session.list();
@@ -89,37 +90,52 @@ public class FTPClient {
 		}
 
 		FileWriter fileWriter = new FileWriter(filename);
-		
-		if(state == FTPState.passiveCommand){
-			int port = session.pasv();
-			Socket listSocket = new Socket(host, port);
-			session.retr(filename);
-			BufferedReader dirReader = new BufferedReader(new InputStreamReader(listSocket.getInputStream()));
-			while(dirReader.ready()){
-				fileWriter.write( dirReader.readLine());
-				fileWriter.flush();
-			}
-			fileWriter.close();
-			listSocket.close();
-			return;
-		}
-		
-		else if(state == FTPState.activeCommand){
-
-			ServerSocket serverSocket = new ServerSocket(0);
-			session.port(serverSocket.getLocalPort());
-			session.retr(filename);
-			Socket listSocket = serverSocket.accept();
-			BufferedReader dirReader = new BufferedReader(new InputStreamReader(listSocket.getInputStream()));
-			while(dirReader.ready()){
-				fileWriter.write( dirReader.readLine());
-				fileWriter.flush();
+		if(ipState == IPState.ipv4){
+			
+			if(state == FTPState.passiveCommand){
+				int port = session.pasv();
+				Socket listSocket = new Socket(host, port);
+				session.retr(filename);
+				BufferedReader dirReader = new BufferedReader(new InputStreamReader(listSocket.getInputStream()));
+				
+				while(dirReader.ready()){
+					fileWriter.write( dirReader.readLine());
+					fileWriter.flush();
+				}
+				
+				fileWriter.close();
+				listSocket.close();
+				return;
 			}
 			
-			listSocket.close();
-			serverSocket.close();
-			fileWriter.close();
-			return;
+			else if(state == FTPState.activeCommand){
+	
+				ServerSocket serverSocket = new ServerSocket(0);
+				session.port(serverSocket.getLocalPort());
+				session.retr(filename);
+				Socket listSocket = serverSocket.accept();
+				BufferedReader dirReader = new BufferedReader(new InputStreamReader(listSocket.getInputStream()));
+				
+				while(dirReader.ready()){
+					fileWriter.write( dirReader.readLine());
+					fileWriter.flush();
+				}
+				
+				listSocket.close();
+				serverSocket.close();
+				fileWriter.close();
+				return;
+			}
+			
+			else{
+				file.delete();
+				fileWriter.close();
+				return;
+			}
+			
+		}
+		if(ipState == IPState.ipv6){
+			
 		}
 		else{
 			file.delete();
@@ -144,5 +160,13 @@ public class FTPClient {
 			return;
 		}
 	}
-	
+	private IPState getIpAddressType(String hostname) throws UnknownHostException{
+		InetAddress ipVersion = InetAddress.getByName(hostname);
+		if (ipVersion instanceof Inet6Address){
+			return IPState.ipv6;
+		}else if (ipVersion instanceof Inet4Address){
+			return IPState.ipv4;
+		}
+		return null;
+	}
 }
