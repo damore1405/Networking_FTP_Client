@@ -331,7 +331,7 @@ public class FTPCommandSession{
 		}
 
 		while(responseReader.ready()){
-			responseString += responseReader.readLine();
+			responseString += responseReader.readLine() + "\n";
 		}
 
 		log.info(responseString);
