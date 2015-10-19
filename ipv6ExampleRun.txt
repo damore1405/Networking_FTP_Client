@@ -10,7 +10,7 @@ login
 Please enter username
 msd88
 Please enter password
-Ophirril594
+XXXX
 Logged in as msd88
 ls
 Contents of directory: /Users/Matt
@@ -54,7 +54,6 @@ drwx------    3 Matt  staff     102 Jun 25 07:54 .qt
 -rw-------    1 Matt  staff      12 Jul 20 23:04 .sh_history
 drwx------    8 Matt  staff     272 Oct  6 14:04 .ssh
 drwxr-xr-x    6 Matt  staff     204 Jun 17 10:13 .subversion
-drwxr-xr-x    6 Matt  staff     204 Oct  1 16:00 .thefuck
 drwxr-xr-x    3 Matt  staff     102 Sep 23 17:25 .vim
 -rw-------    1 Matt  staff   10989 Oct 19 12:42 .viminfo
 -rw-r--r--    1 Matt  staff      11 Sep 20 12:19 .vimrc
@@ -133,7 +132,6 @@ drwx------    3 Matt  staff     102 Jun 25 07:54 .qt
 -rw-------    1 Matt  staff      12 Jul 20 23:04 .sh_history
 drwx------    8 Matt  staff     272 Oct  6 14:04 .ssh
 drwxr-xr-x    6 Matt  staff     204 Jun 17 10:13 .subversion
-drwxr-xr-x    6 Matt  staff     204 Oct  1 16:00 .thefuck
 drwxr-xr-x    3 Matt  staff     102 Sep 23 17:25 .vim
 -rw-------    1 Matt  staff   10989 Oct 19 12:42 .viminfo
 -rw-r--r--    1 Matt  staff      11 Sep 20 12:19 .vimrc
@@ -221,7 +219,6 @@ drwx------    3 Matt  staff     102 Jun 25 07:54 .qt
 -rw-------    1 Matt  staff      12 Jul 20 23:04 .sh_history
 drwx------    8 Matt  staff     272 Oct  6 14:04 .ssh
 drwxr-xr-x    6 Matt  staff     204 Jun 17 10:13 .subversion
-drwxr-xr-x    6 Matt  staff     204 Oct  1 16:00 .thefuck
 drwxr-xr-x    3 Matt  staff     102 Sep 23 17:25 .vim
 -rw-------    1 Matt  staff   10989 Oct 19 12:42 .viminfo
 -rw-r--r--    1 Matt  staff      11 Sep 20 12:19 .vimrc
@@ -301,7 +298,6 @@ drwx------    3 Matt  staff     102 Jun 25 07:54 .qt
 -rw-------    1 Matt  staff      12 Jul 20 23:04 .sh_history
 drwx------    8 Matt  staff     272 Oct  6 14:04 .ssh
 drwxr-xr-x    6 Matt  staff     204 Jun 17 10:13 .subversion
-drwxr-xr-x    6 Matt  staff     204 Oct  1 16:00 .thefuck
 drwxr-xr-x    3 Matt  staff     102 Sep 23 17:25 .vim
 -rw-------    1 Matt  staff   10989 Oct 19 12:42 .viminfo
 -rw-r--r--    1 Matt  staff      11 Sep 20 12:19 .vimrc
@@ -401,7 +397,6 @@ drwx------    3 Matt  staff     102 Jun 25 07:54 .qt
 -rw-------    1 Matt  staff      12 Jul 20 23:04 .sh_history
 drwx------    8 Matt  staff     272 Oct  6 14:04 .ssh
 drwxr-xr-x    6 Matt  staff     204 Jun 17 10:13 .subversion
-drwxr-xr-x    6 Matt  staff     204 Oct  1 16:00 .thefuck
 drwxr-xr-x    3 Matt  staff     102 Sep 23 17:25 .vim
 -rw-------    1 Matt  staff   10989 Oct 19 12:42 .viminfo
 -rw-r--r--    1 Matt  staff      11 Sep 20 12:19 .vimrc

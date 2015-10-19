@@ -1,14 +1,14 @@
 1.
 
-	In standard ftp, there isnt too much validation from what ive seen other then just plain old Sendint the data to the right IP address. There are a couple small ways that the protocall implements security however. Unless there is a malicious user watching the network traffic on the interface, then there is a randomness to the port which is used for data transfer, so it would be difficult to spoof both the IP of the client and get the port correct to actually receive the data being sent.
+	In standard ftp, there isn’t too much validation from what I’ve seen. Other then just plain old sending the data to the right IP address. There are a couple small ways that the protocol implements security however. Unless there is a malicious user watching the network traffic on the interface, then there is a randomness to the port which is used for data transfer, so it would be difficult to spoof both the IP of the client and get the port correct to actually receive the data being sent. however even this would be easy to get through if you got the request/response for PORT/PASV respectively.
 
 2.
 
-	When going from one client, to many servers, While most likely confusing to implement and use with different servers sending data to the client at different types, would be relativly scalable and only limited by the command ports on the local client that can be opened.
+	When going from one client, to many servers, While most likely confusing to implement and use with different servers sending data to the client at different types, would be relatively scalable and only limited by the command ports on the local client that can be opened.
 
-	From the oen server to many clients i can see an implementation that would easily scale. because all the clients make requests from the same port, a Daemon could listen for any incoming connections, and for every new connection attempt make, the server could spin off another process to deal with that client without any of the other client sessions crashing from thread issues in other client connections.
+	From the one server to many clients i can see an implementation that would easily scale. because all the clients make requests from the same port, a daemon could listen for any incoming connections, and for every new connection attempt made, the server could spin off another process to deal with that client without any of the other client sessions crashing from thread issues in other client connections.
 
 3.
 
-	The client knows how to send the correct commands in the correct order, simply by error checkign itself. If the server responds with an error code, then a good client will respond accordingly
+	The client knows how to send the correct commands in the correct order, simply by error checking itself. If the server responds with an error code, then a good client will respond accordingly. It really has no way of proving that the sender is trustworthy other than a DNS lookup or maybe even a mac address verification.
 	

@@ -10,7 +10,6 @@ public class JavaFtpClient{
     private static final Logger log = Logger.getLogger("log");
 
     public static void main(String[] args) {
-System.out.println(args[1]);
         // Init the scanner for input, and the username and password
         Scanner in = new Scanner(System.in);
         String username;
