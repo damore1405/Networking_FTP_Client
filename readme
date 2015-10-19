@@ -1,0 +1,12 @@
+Matthew Damore
+
+i included a makefile for a lil easier compilation... the use is as follows:
+	Host="hostname" LogFilePath="logFilePath" make run
+	or...
+	Host="hostname" LogFilePath="logFilePath" Port="" make run
+	
+or just compile the JavaFtpClient.java then run with the params in the following format
+
+i ran two samples, one using a ipv6 server on my localhost ::1, and another using the server that professor Kain put up. That way i can show functionality for pasv/port and epsv/eprt.
+
+Matt

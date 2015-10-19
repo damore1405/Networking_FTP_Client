@@ -5,12 +5,12 @@ import java.util.logging.FileHandler;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
-public class driver {
+public class JavaFtpClient{
     //Init the logger
     private static final Logger log = Logger.getLogger("log");
 
     public static void main(String[] args) {
-
+System.out.println(args[1]);
         // Init the scanner for input, and the username and password
         Scanner in = new Scanner(System.in);
         String username;
@@ -113,6 +113,10 @@ public class driver {
                         break;
                     case "get":
                         try {
+                            if(splitCommand.length < 2){
+                                System.err.println("Invalid arg count for get request");
+                                continue;
+                            }
                             ftpClient.getFile(splitCommand[1]);
                             System.out.println("File: "+splitCommand[1]+" transferred succesfully");
                         } catch (FTPException e) {
@@ -122,6 +126,10 @@ public class driver {
                         break;
                     case "cd":
                         try {
+                            if(splitCommand.length < 2){
+                                System.err.println("Invalid arg count for CWD request");
+                                continue;
+                            }
                             ftpClient.cd(splitCommand[1]);
                         } catch (FTPException e) {
                             System.err.println(e.getMessage());
@@ -139,6 +147,7 @@ public class driver {
                     case "quit":
                         ftpClient.quit();
                         System.exit(1);
+                        break;
                     default:
                         System.out.println("invalid command!");
                 }
