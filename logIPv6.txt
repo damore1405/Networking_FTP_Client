@@ -1,0 +1,123 @@
+Oct 19, 2015 1:16:43 PM FTPCommandSession openConnection
+INFO: Socket connection to ::1 opened..
+Oct 19, 2015 1:16:43 PM FTPCommandSession openConnection
+INFO: 220 ::1 FTP server (tnftpd 20100324+GSSAPI) ready.
+Oct 19, 2015 1:16:46 PM FTPCommandSession user
+INFO: 331 User jerry accepted, provide password.
+Oct 19, 2015 1:16:57 PM FTPCommandSession user
+INFO: 331 User Matt accepted, provide password.
+Oct 19, 2015 1:16:57 PM FTPClient login
+INFO: Login of user msd88 successful
+Oct 19, 2015 1:16:57 PM FTPCommandSession pwd
+INFO: 257 "/Users/Matt" is the current directory.
+Oct 19, 2015 1:16:57 PM FTPCommandSession epsv
+INFO: 229 Entering Extended Passive Mode (|||64092|)
+Oct 19, 2015 1:16:57 PM FTPClient ls
+INFO: Socket at 64092 opened
+Oct 19, 2015 1:16:57 PM FTPCommandSession list
+INFO: 150 Opening ASCII mode data connection for '/bin/ls'.
+Oct 19, 2015 1:16:58 PM FTPCommandSession flushReader
+INFO: 226 Transfer complete.
+Oct 19, 2015 1:17:14 PM FTPClient quit
+INFO: Quit command recieved... exiting...
+Oct 19, 2015 1:17:28 PM FTPCommandSession openConnection
+INFO: Socket connection to ::1 opened..
+Oct 19, 2015 1:17:28 PM FTPCommandSession openConnection
+INFO: 220 ::1 FTP server (tnftpd 20100324+GSSAPI) ready.
+Oct 19, 2015 1:17:32 PM FTPCommandSession user
+INFO: 331 User jerry accepted, provide password.
+Oct 19, 2015 1:17:40 PM FTPCommandSession user
+INFO: 331 User Matt accepted, provide password.
+Oct 19, 2015 1:17:40 PM FTPClient login
+INFO: Login of user msd88 successful
+Oct 19, 2015 1:17:43 PM FTPCommandSession pwd
+INFO: 257 "/Users/Matt" is the current directory.
+Oct 19, 2015 1:17:43 PM FTPCommandSession epsv
+INFO: 229 Entering Extended Passive Mode (|||64167|)
+Oct 19, 2015 1:17:43 PM FTPClient ls
+INFO: Socket at 64167 opened
+Oct 19, 2015 1:17:43 PM FTPCommandSession list
+INFO: 150 Opening ASCII mode data connection for '/bin/ls'.
+Oct 19, 2015 1:17:43 PM FTPCommandSession flushReader
+INFO: 226 Transfer complete.
+Oct 19, 2015 1:17:48 PM FTPClient passive
+INFO: State has changed to active...
+Oct 19, 2015 1:17:50 PM FTPCommandSession pwd
+INFO: 257 "/Users/Matt" is the current directory.
+Oct 19, 2015 1:17:50 PM FTPCommandSession eprt
+INFO: EPRT |2|0:0:0:0:0:0:0:1|64170|
+
+Oct 19, 2015 1:17:50 PM FTPCommandSession eprt
+INFO: 200 EPRT command successful.
+Oct 19, 2015 1:17:50 PM FTPCommandSession list
+INFO: 150 Opening ASCII mode data connection for '/bin/ls'.
+Oct 19, 2015 1:17:50 PM FTPCommandSession flushReader
+INFO: 226 Transfer complete.
+Oct 19, 2015 1:18:03 PM FTPCommandSession pwd
+INFO: 257 "/Users" is the current directory.
+Oct 19, 2015 1:18:05 PM FTPCommandSession pwd
+INFO: 257 "/Users" is the current directory.
+Oct 19, 2015 1:18:05 PM FTPCommandSession eprt
+INFO: EPRT |2|0:0:0:0:0:0:0:1|64173|
+
+Oct 19, 2015 1:18:05 PM FTPCommandSession eprt
+INFO: 200 EPRT command successful.
+Oct 19, 2015 1:18:05 PM FTPCommandSession list
+INFO: 150 Opening ASCII mode data connection for '/bin/ls'.
+Oct 19, 2015 1:18:06 PM FTPCommandSession flushReader
+INFO: 226 Transfer complete.
+Oct 19, 2015 1:18:09 PM FTPCommandSession pwd
+INFO: 257 "/Users/Matt" is the current directory.
+Oct 19, 2015 1:18:13 PM FTPCommandSession pwd
+INFO: 257 "/Users/Matt" is the current directory.
+Oct 19, 2015 1:18:13 PM FTPCommandSession eprt
+INFO: EPRT |2|0:0:0:0:0:0:0:1|64174|
+
+Oct 19, 2015 1:18:13 PM FTPCommandSession eprt
+INFO: 200 EPRT command successful.
+Oct 19, 2015 1:18:13 PM FTPCommandSession list
+INFO: 150 Opening ASCII mode data connection for '/bin/ls'.
+Oct 19, 2015 1:18:13 PM FTPCommandSession flushReader
+INFO: 226 Transfer complete.
+Oct 19, 2015 1:19:20 PM FTPCommandSession pwd
+INFO: 257 "/Users/Matt" is the current directory.
+Oct 19, 2015 1:19:20 PM FTPCommandSession eprt
+INFO: EPRT |2|0:0:0:0:0:0:0:1|64181|
+
+Oct 19, 2015 1:19:20 PM FTPCommandSession eprt
+INFO: 200 EPRT command successful.
+Oct 19, 2015 1:19:20 PM FTPCommandSession list
+INFO: 150 Opening ASCII mode data connection for '/bin/ls'.
+Oct 19, 2015 1:19:20 PM FTPCommandSession flushReader
+INFO: 226 Transfer complete.
+Oct 19, 2015 1:19:28 PM FTPCommandSession eprt
+INFO: EPRT |2|0:0:0:0:0:0:0:1|64183|
+
+Oct 19, 2015 1:19:28 PM FTPCommandSession eprt
+INFO: 200 EPRT command successful.
+Oct 19, 2015 1:19:28 PM FTPCommandSession retr
+INFO: 150 Opening ASCII mode data connection for 'gumbo.h' (26441 bytes).
+Oct 19, 2015 1:19:29 PM FTPCommandSession flushReader
+INFO: 226 Transfer complete.
+Oct 19, 2015 1:19:33 PM FTPClient passive
+INFO: State has changed to passive
+Oct 19, 2015 1:19:40 PM FTPCommandSession epsv
+INFO: 229 Entering Extended Passive Mode (|||64187|)
+Oct 19, 2015 1:19:40 PM FTPCommandSession retr
+INFO: 150 Opening ASCII mode data connection for '.vimrc' (11 bytes).
+Oct 19, 2015 1:19:40 PM FTPCommandSession flushReader
+INFO: 226 Transfer complete.
+Oct 19, 2015 1:19:47 PM FTPCommandSession pwd
+INFO: 257 "/Users/Matt" is the current directory.
+Oct 19, 2015 1:20:17 PM FTPCommandSession pwd
+INFO: 257 "/Users/Matt" is the current directory.
+Oct 19, 2015 1:20:17 PM FTPCommandSession epsv
+INFO: 229 Entering Extended Passive Mode (|||64209|)
+Oct 19, 2015 1:20:17 PM FTPClient ls
+INFO: Socket at 64209 opened
+Oct 19, 2015 1:20:17 PM FTPCommandSession list
+INFO: 150 Opening ASCII mode data connection for '/bin/ls'.
+Oct 19, 2015 1:20:17 PM FTPCommandSession flushReader
+INFO: 226 Transfer complete.
+Oct 19, 2015 1:20:20 PM FTPClient quit
+INFO: Quit command recieved... exiting...

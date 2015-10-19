@@ -56,7 +56,7 @@ public class driver {
         } catch (IOException e) {
             e.printStackTrace();
         } catch (FTPException e) {
-            System.err.println(e.getMessage());
+            System.err.println(e.getMessage() + ": invalid username or password");
         }
 
         while (in.hasNextLine()) {
@@ -75,9 +75,10 @@ public class driver {
                             ftpClient.login(username,password);
                             System.out.println("Logged in as "+ username);
                         }catch (FTPException e){
-                            System.err.println(e.getMessage());
+                            System.err.println(e.getMessage() + ": invalid username or password");
                             continue;
                         }
+                        break;
                     case "ls":
                         try {
                             if(splitCommand.length >= 2){
@@ -113,6 +114,7 @@ public class driver {
                     case "get":
                         try {
                             ftpClient.getFile(splitCommand[1]);
+                            System.out.println("File: "+splitCommand[1]+" transferred succesfully");
                         } catch (FTPException e) {
                             System.err.println(e.getMessage());
                             continue;

@@ -83,7 +83,7 @@ public class FTPCommandSession{
 	 * @return
 	 * @throws IOException
 	 */
-	public int pass(String password) throws IOException {
+	public void pass(String password) throws IOException, FTPException {
 		int responseCode;
 		String responseString;
 		
@@ -93,8 +93,8 @@ public class FTPCommandSession{
 		
 		String[] splitResponse = responseString.split(" ");
 		responseCode = Integer.parseInt(splitResponse[0]);
-		
-		return responseCode;
+		processResponseCode(responseCode);
+		return;
 	}
 
 	/**

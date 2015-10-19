@@ -1,0 +1,112 @@
+Oct 19, 2015 1:23:59 PM FTPCommandSession openConnection
+INFO: Socket connection to 10.246.251.185 opened..
+Oct 19, 2015 1:23:59 PM FTPCommandSession openConnection
+INFO: 220 Welcome to cs472 FTP service.
+Oct 19, 2015 1:24:05 PM FTPCommandSession user
+INFO: 331 Please specify the password.
+Oct 19, 2015 1:24:17 PM FTPCommandSession user
+INFO: 331 Please specify the password.
+Oct 19, 2015 1:24:17 PM FTPClient login
+INFO: Login of user cs472 successful
+Oct 19, 2015 1:24:32 PM FTPCommandSession pwd
+INFO: 257 "/home/cs472"
+Oct 19, 2015 1:24:32 PM FTPCommandSession pasv
+INFO: 227 Entering Passive Mode (10,246,251,185,114,164).
+Oct 19, 2015 1:24:32 PM FTPCommandSession pasv
+INFO: 29348
+Oct 19, 2015 1:24:32 PM FTPClient ls
+INFO: Socket at 29348 opened
+Oct 19, 2015 1:24:32 PM FTPCommandSession list
+INFO: 150 Here comes the directory listing.
+Oct 19, 2015 1:24:32 PM FTPCommandSession flushReader
+INFO: 226 Directory send OK.
+Oct 19, 2015 1:24:35 PM FTPClient passive
+INFO: State has changed to active...
+Oct 19, 2015 1:24:35 PM FTPCommandSession pwd
+INFO: 257 "/home/cs472"
+Oct 19, 2015 1:24:35 PM FTPCommandSession port
+INFO: PORT 129,25,202,88,251,39
+
+Oct 19, 2015 1:24:35 PM FTPCommandSession port
+INFO: 200 PORT command successful. Consider using PASV.
+Oct 19, 2015 1:24:35 PM FTPCommandSession list
+INFO: 150 Here comes the directory listing.
+Oct 19, 2015 1:24:35 PM FTPCommandSession flushReader
+INFO: 226 Directory send OK.
+Oct 19, 2015 1:25:00 PM FTPCommandSession port
+INFO: PORT 129,25,202,88,251,53
+
+Oct 19, 2015 1:25:00 PM FTPCommandSession port
+INFO: 200 PORT command successful. Consider using PASV.
+Oct 19, 2015 1:25:00 PM FTPCommandSession retr
+INFO: 150 Opening BINARY mode data connection for file1.txt (54 bytes).
+Oct 19, 2015 1:25:00 PM FTPCommandSession flushReader
+INFO: 226 Transfer complete.
+Oct 19, 2015 1:25:05 PM FTPClient passive
+INFO: State has changed to passive
+Oct 19, 2015 1:25:09 PM FTPCommandSession pasv
+INFO: 227 Entering Passive Mode (10,246,251,185,113,118).
+Oct 19, 2015 1:25:09 PM FTPCommandSession pasv
+INFO: 29046
+Oct 19, 2015 1:25:09 PM FTPCommandSession retr
+INFO: 150 Opening BINARY mode data connection for file2.txt (13 bytes).
+Oct 19, 2015 1:25:09 PM FTPCommandSession flushReader
+INFO: 226 Transfer complete.
+Oct 19, 2015 1:25:13 PM FTPCommandSession pwd
+INFO: 257 "/home/cs472"
+Oct 19, 2015 1:25:13 PM FTPCommandSession pasv
+INFO: 227 Entering Passive Mode (10,246,251,185,211,248).
+Oct 19, 2015 1:25:13 PM FTPCommandSession pasv
+INFO: 54264
+Oct 19, 2015 1:25:13 PM FTPClient ls
+INFO: Socket at 54264 opened
+Oct 19, 2015 1:25:13 PM FTPCommandSession list
+INFO: 150 Here comes the directory listing.
+Oct 19, 2015 1:25:13 PM FTPCommandSession flushReader
+INFO: 226 Directory send OK.
+Oct 19, 2015 1:25:15 PM FTPCommandSession pwd
+INFO: 257 "/home"
+Oct 19, 2015 1:25:18 PM FTPCommandSession pwd
+INFO: 257 "/home"
+Oct 19, 2015 1:25:18 PM FTPCommandSession pasv
+INFO: 227 Entering Passive Mode (10,246,251,185,174,73).
+Oct 19, 2015 1:25:18 PM FTPCommandSession pasv
+INFO: 44617
+Oct 19, 2015 1:25:18 PM FTPClient ls
+INFO: Socket at 44617 opened
+Oct 19, 2015 1:25:18 PM FTPCommandSession list
+INFO: 150 Here comes the directory listing.
+Oct 19, 2015 1:25:18 PM FTPCommandSession flushReader
+INFO: 226 Directory send OK.
+Oct 19, 2015 1:25:22 PM FTPCommandSession pwd
+INFO: 257 "/home/ubuntu"
+Oct 19, 2015 1:25:25 PM FTPCommandSession pwd
+INFO: 257 "/home/ubuntu"
+Oct 19, 2015 1:25:25 PM FTPCommandSession pasv
+INFO: 227 Entering Passive Mode (10,246,251,185,250,78).
+Oct 19, 2015 1:25:25 PM FTPCommandSession pasv
+INFO: 64078
+Oct 19, 2015 1:25:25 PM FTPClient ls
+INFO: Socket at 64078 opened
+Oct 19, 2015 1:25:25 PM FTPCommandSession list
+INFO: 150 Here comes the directory listing.
+Oct 19, 2015 1:25:25 PM FTPCommandSession flushReader
+INFO: 226 Directory send OK.
+Oct 19, 2015 1:25:35 PM FTPCommandSession pasv
+INFO: 227 Entering Passive Mode (10,246,251,185,157,158).
+Oct 19, 2015 1:25:35 PM FTPCommandSession pasv
+INFO: 40350
+Oct 19, 2015 1:25:35 PM FTPCommandSession retr
+INFO: 150 Opening BINARY mode data connection for file1 (54 bytes).
+Oct 19, 2015 1:25:36 PM FTPCommandSession flushReader
+INFO: 226 Transfer complete.
+Oct 19, 2015 1:25:45 PM FTPCommandSession help
+INFO: 214-The following commands are recognized.
+ ABOR ACCT ALLO APPE CDUP CWD  DELE EPRT EPSV FEAT HELP LIST MDTM MKD
+ MODE NLST NOOP OPTS PASS PASV PORT PWD  QUIT REIN REST RETR RMD  RNFR
+ RNTO SITE SIZE SMNT STAT STOR STOU STRU SYST TYPE USER XCUP XCWD XMKD
+ XPWD XRMD
+214 Help OK.
+
+Oct 19, 2015 1:25:48 PM FTPClient quit
+INFO: Quit command recieved... exiting...

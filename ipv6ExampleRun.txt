@@ -1,0 +1,440 @@
+n2-64-146:src Matt$ java driver ::1 /Users/Matt/Google\ Drive/Networking/mdamore_hw2a/logIPv6.txt 
+Please enter username
+jerry
+Please enter password
+smith
+not logged in: invalid username or password
+whoops
+invalid command!
+login
+Please enter username
+msd88
+Please enter password
+Ophirril594
+Logged in as msd88
+ls
+Contents of directory: /Users/Matt
+total 3
+drwxr-xr-x    3 Matt  staff     102 Sep  4 11:52 .AndroidStudio1.2
+drwxr-xr-x    3 Matt  staff     102 Sep  4 11:58 .AndroidStudio1.3
+drwxr-xr-x    3 Matt  staff     102 Oct 10 15:05 .ApacheDirectoryStudio
+-r--------    1 Matt  staff       7 May 22 10:41 .CFUserTextEncoding
+-rw-r--r--    1 Matt  staff   18436 Oct 19 12:08 .DS_Store
+drwxr-xr-x    6 Matt  staff     204 Sep  8 13:24 .Genymobile
+drwxr-xr-x    3 Matt  staff     102 Oct 18 22:26 .IdeaIC14
+drwx------  288 Matt  staff    9792 Oct 19 05:56 .Trash
+-rw-------    1 Matt  staff     796 Oct 17 23:20 .Xauthority
+drwxr-xr-x   10 Matt  staff     340 Sep  4 15:36 .android
+-rw-r--r--    1 Matt  staff     586 Oct 10 15:14 .anyconnect
+-rw-------    1 Matt  staff    6505 Oct 18 00:13 .bash_history
+-rw-r--r--    1 Matt  staff     798 Sep 25 14:49 .bash_profile
+-rw-r--r--    1 Matt  staff      74 May 22 11:47 .bash_profile.macports-saved_2015-06-25_at_17:48:43
+-rw-r--r--    1 Matt  staff     452 Jun 25 17:48 .bash_profile.pysave
+drwxr-xr-x  123 Matt  staff    4182 Oct 18 14:09 .bash_sessions
+drwxr-xr-x    3 Matt  staff     102 May 29 13:03 .cache
+drwxr-xr-x    3 Matt  staff     102 Oct 10 15:14 .cisco
+drwxr-xr-x    6 Matt  staff     204 Jun  2 12:11 .codeintel
+drwx------    7 Matt  staff     238 Oct  1 16:34 .config
+drwx------    3 Matt  staff     102 May 23 10:26 .cups
+drwxr-xr-x   18 Matt  staff     612 Oct 17 20:48 .fontconfig
+-rw-r--r--    1 Matt  staff     446 Sep 17 12:04 .gitconfig
+-rw-r--r--    1 Matt  staff      13 Nov 12  2012 .gitignore_global
+drwxr-xr-x    5 Matt  staff     170 Sep  4 11:57 .gradle
+-rw-r--r--    1 Matt  staff      27 Nov 12  2012 .hgignore_global
+-rw-------    1 Matt  staff      78 Sep 19 19:48 .lesshst
+drwxr-xr-x    3 Matt  staff     102 Jun 25 17:49 .macports
+-rw-------    1 Matt  staff     170 Aug 20 14:18 .mysql_history
+drwx------    8 Matt  staff     272 Jun 30 11:26 .nx
+drwxr-xr-x    3 Matt  staff     102 Sep 27 21:45 .oracle_jre_usage
+drwx------    3 Matt  staff     102 Jun 25 07:54 .qt
+-rw-------    1 Matt  staff    1024 Oct 17 23:20 .rnd
+-rw-------    1 Matt  staff     118 Aug 10 01:53 .serverauth.12688
+-rw-------    1 Matt  staff     118 Sep 25 00:44 .serverauth.2065
+-rw-------    1 Matt  staff      70 Oct 17 23:20 .serverauth.68818
+-rw-------    1 Matt  staff      12 Jul 20 23:04 .sh_history
+drwx------    8 Matt  staff     272 Oct  6 14:04 .ssh
+drwxr-xr-x    6 Matt  staff     204 Jun 17 10:13 .subversion
+drwxr-xr-x    6 Matt  staff     204 Oct  1 16:00 .thefuck
+drwxr-xr-x    3 Matt  staff     102 Sep 23 17:25 .vim
+-rw-------    1 Matt  staff   10989 Oct 19 12:42 .viminfo
+-rw-r--r--    1 Matt  staff      11 Sep 20 12:19 .vimrc
+drwxr-xr-x    6 Matt  staff     204 Oct 17 22:16 .wireshark
+drwxr-xr-x    7 Matt  staff     238 Aug 10 01:53 .wireshark-etc
+drwxr-xr-x   12 Matt  staff     408 Jun 25 07:52 .x2go
+drwxr-xr-x    4 Matt  staff     136 Jun 21 09:24 .x2goclient
+-rw-r--r--    1 Matt  staff  940264 Sep 25 12:54 9.25.15 12.53 PM.pklg
+-rw-r--r--    1 Matt  staff    1300 Sep 25 12:55 9.25.15 12.54 PM.pklg
+drwx------    5 Matt  staff     170 Jul 15 15:42 Applications
+drwxr-xr-x    4 Matt  staff     136 Aug 20 00:11 Applications (Parallels)
+drwx------    3 Matt  staff     102 Oct  9 19:32 Creative Cloud Files
+drwx------   57 Matt  staff    1938 Oct 19 12:47 Desktop
+drwx------   14 Matt  staff     476 Oct  5 16:26 Documents
+drwx------   46 Matt  staff    1564 Oct 18 22:16 Downloads
+drwxr-xr-x   12 Matt  staff     408 Oct 12 00:29 Git Repos
+drwx------   37 Matt  staff    1258 Oct 18 13:55 Google Drive
+drwx------   68 Matt  staff    2312 Oct  6 01:45 Library
+drwx------    7 Matt  staff     238 Sep 30 13:15 Movies
+drwx------    6 Matt  staff     204 Jul 15 14:58 Music
+drwx------    9 Matt  staff     306 Oct  9 10:47 Pictures
+drwxr-xr-x    5 Matt  staff     170 May 22 10:40 Public
+drwxr-xr-x    5 Matt  staff     170 Jun  4 15:07 SimUText
+drwxr-xr-x    2 Matt  staff      68 Sep 24 18:03 VirtualBox VMs
+-rw-r--r--    1 Matt  staff    1383 Aug  5 14:18 common-account
+-rw-r--r--    1 Matt  staff      54 Oct 15 23:06 file1.txt
+drwxr-xr-x   32 Matt  staff    1088 Sep 19 15:59 gumbo-parser
+lrwxr-xr-x    1 Matt  staff      26 Sep 19 19:50 gumbo.h -> /usr/local/include/gumbo.h
+lrwxr-xr-x    1 Matt  staff      41 Sep 19 20:02 gumboLib -> /usr/local/Cellar/gumbo-parser/0.9.3/lib/
+-rw-r--r--    1 Matt  staff  429037 Feb  1  2015 haproxy_documentation.txt
+lrwxr-xr-x    1 Matt  staff      33 Sep 25 10:04 libusb-1.0.0.dylib -> /usr/local/lib/libusb-1.0.0.dylib
+lrwxr-xr-x    1 Matt  staff      27 Sep 25 10:04 libusb-1.0.a -> /usr/local/lib/libusb-1.0.a
+lrwxr-xr-x    1 Matt  staff      31 Sep 25 10:04 libusb-1.0.dylib -> /usr/local/lib/libusb-1.0.dylib
+-rw-r--r--    1 Matt  staff    1241 Sep 24 16:58 usbinfo.txt
+passive
+State has changed to active...
+ls
+Contents of directory: /Users/Matt
+total 3
+drwxr-xr-x    3 Matt  staff     102 Sep  4 11:52 .AndroidStudio1.2
+drwxr-xr-x    3 Matt  staff     102 Sep  4 11:58 .AndroidStudio1.3
+drwxr-xr-x    3 Matt  staff     102 Oct 10 15:05 .ApacheDirectoryStudio
+-r--------    1 Matt  staff       7 May 22 10:41 .CFUserTextEncoding
+-rw-r--r--    1 Matt  staff   18436 Oct 19 12:08 .DS_Store
+drwxr-xr-x    6 Matt  staff     204 Sep  8 13:24 .Genymobile
+drwxr-xr-x    3 Matt  staff     102 Oct 18 22:26 .IdeaIC14
+drwx------  288 Matt  staff    9792 Oct 19 05:56 .Trash
+-rw-------    1 Matt  staff     796 Oct 17 23:20 .Xauthority
+drwxr-xr-x   10 Matt  staff     340 Sep  4 15:36 .android
+-rw-r--r--    1 Matt  staff     586 Oct 10 15:14 .anyconnect
+-rw-------    1 Matt  staff    6505 Oct 18 00:13 .bash_history
+-rw-r--r--    1 Matt  staff     798 Sep 25 14:49 .bash_profile
+-rw-r--r--    1 Matt  staff      74 May 22 11:47 .bash_profile.macports-saved_2015-06-25_at_17:48:43
+-rw-r--r--    1 Matt  staff     452 Jun 25 17:48 .bash_profile.pysave
+drwxr-xr-x  123 Matt  staff    4182 Oct 18 14:09 .bash_sessions
+drwxr-xr-x    3 Matt  staff     102 May 29 13:03 .cache
+drwxr-xr-x    3 Matt  staff     102 Oct 10 15:14 .cisco
+drwxr-xr-x    6 Matt  staff     204 Jun  2 12:11 .codeintel
+drwx------    7 Matt  staff     238 Oct  1 16:34 .config
+drwx------    3 Matt  staff     102 May 23 10:26 .cups
+drwxr-xr-x   18 Matt  staff     612 Oct 17 20:48 .fontconfig
+-rw-r--r--    1 Matt  staff     446 Sep 17 12:04 .gitconfig
+-rw-r--r--    1 Matt  staff      13 Nov 12  2012 .gitignore_global
+drwxr-xr-x    5 Matt  staff     170 Sep  4 11:57 .gradle
+-rw-r--r--    1 Matt  staff      27 Nov 12  2012 .hgignore_global
+-rw-------    1 Matt  staff      78 Sep 19 19:48 .lesshst
+drwxr-xr-x    3 Matt  staff     102 Jun 25 17:49 .macports
+-rw-------    1 Matt  staff     170 Aug 20 14:18 .mysql_history
+drwx------    8 Matt  staff     272 Jun 30 11:26 .nx
+drwxr-xr-x    3 Matt  staff     102 Sep 27 21:45 .oracle_jre_usage
+drwx------    3 Matt  staff     102 Jun 25 07:54 .qt
+-rw-------    1 Matt  staff    1024 Oct 17 23:20 .rnd
+-rw-------    1 Matt  staff     118 Aug 10 01:53 .serverauth.12688
+-rw-------    1 Matt  staff     118 Sep 25 00:44 .serverauth.2065
+-rw-------    1 Matt  staff      70 Oct 17 23:20 .serverauth.68818
+-rw-------    1 Matt  staff      12 Jul 20 23:04 .sh_history
+drwx------    8 Matt  staff     272 Oct  6 14:04 .ssh
+drwxr-xr-x    6 Matt  staff     204 Jun 17 10:13 .subversion
+drwxr-xr-x    6 Matt  staff     204 Oct  1 16:00 .thefuck
+drwxr-xr-x    3 Matt  staff     102 Sep 23 17:25 .vim
+-rw-------    1 Matt  staff   10989 Oct 19 12:42 .viminfo
+-rw-r--r--    1 Matt  staff      11 Sep 20 12:19 .vimrc
+drwxr-xr-x    6 Matt  staff     204 Oct 17 22:16 .wireshark
+drwxr-xr-x    7 Matt  staff     238 Aug 10 01:53 .wireshark-etc
+drwxr-xr-x   12 Matt  staff     408 Jun 25 07:52 .x2go
+drwxr-xr-x    4 Matt  staff     136 Jun 21 09:24 .x2goclient
+-rw-r--r--    1 Matt  staff  940264 Sep 25 12:54 9.25.15 12.53 PM.pklg
+-rw-r--r--    1 Matt  staff    1300 Sep 25 12:55 9.25.15 12.54 PM.pklg
+drwx------    5 Matt  staff     170 Jul 15 15:42 Applications
+drwxr-xr-x    4 Matt  staff     136 Aug 20 00:11 Applications (Parallels)
+drwx------    3 Matt  staff     102 Oct  9 19:32 Creative Cloud Files
+drwx------   57 Matt  staff    1938 Oct 19 12:47 Desktop
+drwx------   14 Matt  staff     476 Oct  5 16:26 Documents
+drwx------   46 Matt  staff    1564 Oct 18 22:16 Downloads
+drwxr-xr-x   12 Matt  staff     408 Oct 12 00:29 Git Repos
+drwx------   37 Matt  staff    1258 Oct 18 13:55 Google Drive
+drwx------   68 Matt  staff    2312 Oct  6 01:45 Library
+drwx------    7 Matt  staff     238 Sep 30 13:15 Movies
+drwx------    6 Matt  staff     204 Jul 15 14:58 Music
+drwx------    9 Matt  staff     306 Oct  9 10:47 Pictures
+drwxr-xr-x    5 Matt  staff     170 May 22 10:40 Public
+drwxr-xr-x    5 Matt  staff     170 Jun  4 15:07 SimUText
+drwxr-xr-x    2 Matt  staff      68 Sep 24 18:03 VirtualBox VMs
+-rw-r--r--    1 Matt  staff    1383 Aug  5 14:18 common-account
+-rw-r--r--    1 Matt  staff      54 Oct 15 23:06 file1.txt
+drwxr-xr-x   32 Matt  staff    1088 Sep 19 15:59 gumbo-parser
+lrwxr-xr-x    1 Matt  staff      26 Sep 19 19:50 gumbo.h -> /usr/local/include/gumbo.h
+lrwxr-xr-x    1 Matt  staff      41 Sep 19 20:02 gumboLib -> /usr/local/Cellar/gumbo-parser/0.9.3/lib/
+-rw-r--r--    1 Matt  staff  429037 Feb  1  2015 haproxy_documentation.txt
+lrwxr-xr-x    1 Matt  staff      33 Sep 25 10:04 libusb-1.0.0.dylib -> /usr/local/lib/libusb-1.0.0.dylib
+lrwxr-xr-x    1 Matt  staff      27 Sep 25 10:04 libusb-1.0.a -> /usr/local/lib/libusb-1.0.a
+lrwxr-xr-x    1 Matt  staff      31 Sep 25 10:04 libusb-1.0.dylib -> /usr/local/lib/libusb-1.0.dylib
+-rw-r--r--    1 Matt  staff    1241 Sep 24 16:58 usbinfo.txt
+cd ..
+moved to: /Users
+ls
+Contents of directory: /Users
+total 0
+-rw-r--r--   1 root  wheel      0 Aug 22 18:27 .localized
+drwxr-xr-x  11 201   _guest   374 May 22 10:41 Guest
+drwxr-xr-x  76 Matt  staff   2584 Oct 19 12:42 Matt
+drwxrwxrwt   9 root  wheel    306 Oct  9 19:21 Shared
+cd Matt
+moved to: /Users/Matt
+ls
+Contents of directory: /Users/Matt
+total 3
+drwxr-xr-x    3 Matt  staff     102 Sep  4 11:52 .AndroidStudio1.2
+drwxr-xr-x    3 Matt  staff     102 Sep  4 11:58 .AndroidStudio1.3
+drwxr-xr-x    3 Matt  staff     102 Oct 10 15:05 .ApacheDirectoryStudio
+-r--------    1 Matt  staff       7 May 22 10:41 .CFUserTextEncoding
+-rw-r--r--    1 Matt  staff   18436 Oct 19 12:08 .DS_Store
+drwxr-xr-x    6 Matt  staff     204 Sep  8 13:24 .Genymobile
+drwxr-xr-x    3 Matt  staff     102 Oct 18 22:26 .IdeaIC14
+drwx------  288 Matt  staff    9792 Oct 19 05:56 .Trash
+-rw-------    1 Matt  staff     796 Oct 17 23:20 .Xauthority
+drwxr-xr-x   10 Matt  staff     340 Sep  4 15:36 .android
+-rw-r--r--    1 Matt  staff     586 Oct 10 15:14 .anyconnect
+-rw-------    1 Matt  staff    6505 Oct 18 00:13 .bash_history
+-rw-r--r--    1 Matt  staff     798 Sep 25 14:49 .bash_profile
+-rw-r--r--    1 Matt  staff      74 May 22 11:47 .bash_profile.macports-saved_2015-06-25_at_17:48:43
+-rw-r--r--    1 Matt  staff     452 Jun 25 17:48 .bash_profile.pysave
+drwxr-xr-x  123 Matt  staff    4182 Oct 18 14:09 .bash_sessions
+drwxr-xr-x    3 Matt  staff     102 May 29 13:03 .cache
+drwxr-xr-x    3 Matt  staff     102 Oct 10 15:14 .cisco
+drwxr-xr-x    6 Matt  staff     204 Jun  2 12:11 .codeintel
+drwx------    7 Matt  staff     238 Oct  1 16:34 .config
+drwx------    3 Matt  staff     102 May 23 10:26 .cups
+drwxr-xr-x   18 Matt  staff     612 Oct 17 20:48 .fontconfig
+-rw-r--r--    1 Matt  staff     446 Sep 17 12:04 .gitconfig
+-rw-r--r--    1 Matt  staff      13 Nov 12  2012 .gitignore_global
+drwxr-xr-x    5 Matt  staff     170 Sep  4 11:57 .gradle
+-rw-r--r--    1 Matt  staff      27 Nov 12  2012 .hgignore_global
+-rw-------    1 Matt  staff      78 Sep 19 19:48 .lesshst
+drwxr-xr-x    3 Matt  staff     102 Jun 25 17:49 .macports
+-rw-------    1 Matt  staff     170 Aug 20 14:18 .mysql_history
+drwx------    8 Matt  staff     272 Jun 30 11:26 .nx
+drwxr-xr-x    3 Matt  staff     102 Sep 27 21:45 .oracle_jre_usage
+drwx------    3 Matt  staff     102 Jun 25 07:54 .qt
+-rw-------    1 Matt  staff    1024 Oct 17 23:20 .rnd
+-rw-------    1 Matt  staff     118 Aug 10 01:53 .serverauth.12688
+-rw-------    1 Matt  staff     118 Sep 25 00:44 .serverauth.2065
+-rw-------    1 Matt  staff      70 Oct 17 23:20 .serverauth.68818
+-rw-------    1 Matt  staff      12 Jul 20 23:04 .sh_history
+drwx------    8 Matt  staff     272 Oct  6 14:04 .ssh
+drwxr-xr-x    6 Matt  staff     204 Jun 17 10:13 .subversion
+drwxr-xr-x    6 Matt  staff     204 Oct  1 16:00 .thefuck
+drwxr-xr-x    3 Matt  staff     102 Sep 23 17:25 .vim
+-rw-------    1 Matt  staff   10989 Oct 19 12:42 .viminfo
+-rw-r--r--    1 Matt  staff      11 Sep 20 12:19 .vimrc
+drwxr-xr-x    6 Matt  staff     204 Oct 17 22:16 .wireshark
+drwxr-xr-x    7 Matt  staff     238 Aug 10 01:53 .wireshark-etc
+drwxr-xr-x   12 Matt  staff     408 Jun 25 07:52 .x2go
+drwxr-xr-x    4 Matt  staff     136 Jun 21 09:24 .x2goclient
+-rw-r--r--    1 Matt  staff  940264 Sep 25 12:54 9.25.15 12.53 PM.pklg
+-rw-r--r--    1 Matt  staff    1300 Sep 25 12:55 9.25.15 12.54 PM.pklg
+drwx------    5 Matt  staff     170 Jul 15 15:42 Applications
+drwxr-xr-x    4 Matt  staff     136 Aug 20 00:11 Applications (Parallels)
+drwx------    3 Matt  staff     102 Oct  9 19:32 Creative Cloud Files
+drwx------   57 Matt  staff    1938 Oct 19 12:47 Desktop
+drwx------   14 Matt  staff     476 Oct  5 16:26 Documents
+drwx------   46 Matt  staff    1564 Oct 18 22:16 Downloads
+drwxr-xr-x   12 Matt  staff     408 Oct 12 00:29 Git Repos
+drwx------   37 Matt  staff    1258 Oct 18 13:55 Google Drive
+drwx------   68 Matt  staff    2312 Oct  6 01:45 Library
+drwx------    7 Matt  staff     238 Sep 30 13:15 Movies
+drwx------    6 Matt  staff     204 Jul 15 14:58 Music
+drwx------    9 Matt  staff     306 Oct  9 10:47 Pictures
+drwxr-xr-x    5 Matt  staff     170 May 22 10:40 Public
+drwxr-xr-x    5 Matt  staff     170 Jun  4 15:07 SimUText
+drwxr-xr-x    2 Matt  staff      68 Sep 24 18:03 VirtualBox VMs
+-rw-r--r--    1 Matt  staff    1383 Aug  5 14:18 common-account
+-rw-r--r--    1 Matt  staff      54 Oct 15 23:06 file1.txt
+drwxr-xr-x   32 Matt  staff    1088 Sep 19 15:59 gumbo-parser
+lrwxr-xr-x    1 Matt  staff      26 Sep 19 19:50 gumbo.h -> /usr/local/include/gumbo.h
+lrwxr-xr-x    1 Matt  staff      41 Sep 19 20:02 gumboLib -> /usr/local/Cellar/gumbo-parser/0.9.3/lib/
+-rw-r--r--    1 Matt  staff  429037 Feb  1  2015 haproxy_documentation.txt
+lrwxr-xr-x    1 Matt  staff      33 Sep 25 10:04 libusb-1.0.0.dylib -> /usr/local/lib/libusb-1.0.0.dylib
+lrwxr-xr-x    1 Matt  staff      27 Sep 25 10:04 libusb-1.0.a -> /usr/local/lib/libusb-1.0.a
+lrwxr-xr-x    1 Matt  staff      31 Sep 25 10:04 libusb-1.0.dylib -> /usr/local/lib/libusb-1.0.dylib
+-rw-r--r--    1 Matt  staff    1241 Sep 24 16:58 usbinfo.txt
+get file1.txt
+File already exists, cannot overwrite
+File: file1.txt transferred succesfully
+ls
+Contents of directory: /Users/Matt
+total 3
+drwxr-xr-x    3 Matt  staff     102 Sep  4 11:52 .AndroidStudio1.2
+drwxr-xr-x    3 Matt  staff     102 Sep  4 11:58 .AndroidStudio1.3
+drwxr-xr-x    3 Matt  staff     102 Oct 10 15:05 .ApacheDirectoryStudio
+-r--------    1 Matt  staff       7 May 22 10:41 .CFUserTextEncoding
+-rw-r--r--    1 Matt  staff   18436 Oct 19 12:08 .DS_Store
+drwxr-xr-x    6 Matt  staff     204 Sep  8 13:24 .Genymobile
+drwxr-xr-x    3 Matt  staff     102 Oct 18 22:26 .IdeaIC14
+drwx------  288 Matt  staff    9792 Oct 19 05:56 .Trash
+-rw-------    1 Matt  staff     796 Oct 17 23:20 .Xauthority
+drwxr-xr-x   10 Matt  staff     340 Sep  4 15:36 .android
+-rw-r--r--    1 Matt  staff     586 Oct 10 15:14 .anyconnect
+-rw-------    1 Matt  staff    6505 Oct 18 00:13 .bash_history
+-rw-r--r--    1 Matt  staff     798 Sep 25 14:49 .bash_profile
+-rw-r--r--    1 Matt  staff      74 May 22 11:47 .bash_profile.macports-saved_2015-06-25_at_17:48:43
+-rw-r--r--    1 Matt  staff     452 Jun 25 17:48 .bash_profile.pysave
+drwxr-xr-x  123 Matt  staff    4182 Oct 18 14:09 .bash_sessions
+drwxr-xr-x    3 Matt  staff     102 May 29 13:03 .cache
+drwxr-xr-x    3 Matt  staff     102 Oct 10 15:14 .cisco
+drwxr-xr-x    6 Matt  staff     204 Jun  2 12:11 .codeintel
+drwx------    7 Matt  staff     238 Oct  1 16:34 .config
+drwx------    3 Matt  staff     102 May 23 10:26 .cups
+drwxr-xr-x   18 Matt  staff     612 Oct 17 20:48 .fontconfig
+-rw-r--r--    1 Matt  staff     446 Sep 17 12:04 .gitconfig
+-rw-r--r--    1 Matt  staff      13 Nov 12  2012 .gitignore_global
+drwxr-xr-x    5 Matt  staff     170 Sep  4 11:57 .gradle
+-rw-r--r--    1 Matt  staff      27 Nov 12  2012 .hgignore_global
+-rw-------    1 Matt  staff      78 Sep 19 19:48 .lesshst
+drwxr-xr-x    3 Matt  staff     102 Jun 25 17:49 .macports
+-rw-------    1 Matt  staff     170 Aug 20 14:18 .mysql_history
+drwx------    8 Matt  staff     272 Jun 30 11:26 .nx
+drwxr-xr-x    3 Matt  staff     102 Sep 27 21:45 .oracle_jre_usage
+drwx------    3 Matt  staff     102 Jun 25 07:54 .qt
+-rw-------    1 Matt  staff    1024 Oct 17 23:20 .rnd
+-rw-------    1 Matt  staff     118 Aug 10 01:53 .serverauth.12688
+-rw-------    1 Matt  staff     118 Sep 25 00:44 .serverauth.2065
+-rw-------    1 Matt  staff      70 Oct 17 23:20 .serverauth.68818
+-rw-------    1 Matt  staff      12 Jul 20 23:04 .sh_history
+drwx------    8 Matt  staff     272 Oct  6 14:04 .ssh
+drwxr-xr-x    6 Matt  staff     204 Jun 17 10:13 .subversion
+drwxr-xr-x    6 Matt  staff     204 Oct  1 16:00 .thefuck
+drwxr-xr-x    3 Matt  staff     102 Sep 23 17:25 .vim
+-rw-------    1 Matt  staff   10989 Oct 19 12:42 .viminfo
+-rw-r--r--    1 Matt  staff      11 Sep 20 12:19 .vimrc
+drwxr-xr-x    6 Matt  staff     204 Oct 17 22:16 .wireshark
+drwxr-xr-x    7 Matt  staff     238 Aug 10 01:53 .wireshark-etc
+drwxr-xr-x   12 Matt  staff     408 Jun 25 07:52 .x2go
+drwxr-xr-x    4 Matt  staff     136 Jun 21 09:24 .x2goclient
+-rw-r--r--    1 Matt  staff  940264 Sep 25 12:54 9.25.15 12.53 PM.pklg
+-rw-r--r--    1 Matt  staff    1300 Sep 25 12:55 9.25.15 12.54 PM.pklg
+drwx------    5 Matt  staff     170 Jul 15 15:42 Applications
+drwxr-xr-x    4 Matt  staff     136 Aug 20 00:11 Applications (Parallels)
+drwx------    3 Matt  staff     102 Oct  9 19:32 Creative Cloud Files
+drwx------   57 Matt  staff    1938 Oct 19 12:47 Desktop
+drwx------   14 Matt  staff     476 Oct  5 16:26 Documents
+drwx------   46 Matt  staff    1564 Oct 18 22:16 Downloads
+drwxr-xr-x   12 Matt  staff     408 Oct 12 00:29 Git Repos
+drwx------   37 Matt  staff    1258 Oct 18 13:55 Google Drive
+drwx------   68 Matt  staff    2312 Oct  6 01:45 Library
+drwx------    7 Matt  staff     238 Sep 30 13:15 Movies
+drwx------    6 Matt  staff     204 Jul 15 14:58 Music
+drwx------    9 Matt  staff     306 Oct  9 10:47 Pictures
+drwxr-xr-x    5 Matt  staff     170 May 22 10:40 Public
+drwxr-xr-x    5 Matt  staff     170 Jun  4 15:07 SimUText
+drwxr-xr-x    2 Matt  staff      68 Sep 24 18:03 VirtualBox VMs
+-rw-r--r--    1 Matt  staff    1383 Aug  5 14:18 common-account
+-rw-r--r--    1 Matt  staff      54 Oct 15 23:06 file1.txt
+drwxr-xr-x   32 Matt  staff    1088 Sep 19 15:59 gumbo-parser
+lrwxr-xr-x    1 Matt  staff      26 Sep 19 19:50 gumbo.h -> /usr/local/include/gumbo.h
+lrwxr-xr-x    1 Matt  staff      41 Sep 19 20:02 gumboLib -> /usr/local/Cellar/gumbo-parser/0.9.3/lib/
+-rw-r--r--    1 Matt  staff  429037 Feb  1  2015 haproxy_documentation.txt
+lrwxr-xr-x    1 Matt  staff      33 Sep 25 10:04 libusb-1.0.0.dylib -> /usr/local/lib/libusb-1.0.0.dylib
+lrwxr-xr-x    1 Matt  staff      27 Sep 25 10:04 libusb-1.0.a -> /usr/local/lib/libusb-1.0.a
+lrwxr-xr-x    1 Matt  staff      31 Sep 25 10:04 libusb-1.0.dylib -> /usr/local/lib/libusb-1.0.dylib
+-rw-r--r--    1 Matt  staff    1241 Sep 24 16:58 usbinfo.txt
+get gumbo.h
+File: gumbo.h transferred succesfully
+passive
+State has changed to passive...
+get .vimrc
+File: .vimrc transferred succesfully
+pwd
+/Users/Matt
+invalid command!
+
+invalid command!
+
+invalid command!
+
+invalid command!
+
+invalid command!
+
+invalid command!
+
+invalid command!
+
+invalid command!
+ls
+Contents of directory: /Users/Matt
+total 3
+drwxr-xr-x    3 Matt  staff     102 Sep  4 11:52 .AndroidStudio1.2
+drwxr-xr-x    3 Matt  staff     102 Sep  4 11:58 .AndroidStudio1.3
+drwxr-xr-x    3 Matt  staff     102 Oct 10 15:05 .ApacheDirectoryStudio
+-r--------    1 Matt  staff       7 May 22 10:41 .CFUserTextEncoding
+-rw-r--r--    1 Matt  staff   18436 Oct 19 12:08 .DS_Store
+drwxr-xr-x    6 Matt  staff     204 Sep  8 13:24 .Genymobile
+drwxr-xr-x    3 Matt  staff     102 Oct 18 22:26 .IdeaIC14
+drwx------  288 Matt  staff    9792 Oct 19 05:56 .Trash
+-rw-------    1 Matt  staff     796 Oct 17 23:20 .Xauthority
+drwxr-xr-x   10 Matt  staff     340 Sep  4 15:36 .android
+-rw-r--r--    1 Matt  staff     586 Oct 10 15:14 .anyconnect
+-rw-------    1 Matt  staff    6505 Oct 18 00:13 .bash_history
+-rw-r--r--    1 Matt  staff     798 Sep 25 14:49 .bash_profile
+-rw-r--r--    1 Matt  staff      74 May 22 11:47 .bash_profile.macports-saved_2015-06-25_at_17:48:43
+-rw-r--r--    1 Matt  staff     452 Jun 25 17:48 .bash_profile.pysave
+drwxr-xr-x  123 Matt  staff    4182 Oct 18 14:09 .bash_sessions
+drwxr-xr-x    3 Matt  staff     102 May 29 13:03 .cache
+drwxr-xr-x    3 Matt  staff     102 Oct 10 15:14 .cisco
+drwxr-xr-x    6 Matt  staff     204 Jun  2 12:11 .codeintel
+drwx------    7 Matt  staff     238 Oct  1 16:34 .config
+drwx------    3 Matt  staff     102 May 23 10:26 .cups
+drwxr-xr-x   18 Matt  staff     612 Oct 17 20:48 .fontconfig
+-rw-r--r--    1 Matt  staff     446 Sep 17 12:04 .gitconfig
+-rw-r--r--    1 Matt  staff      13 Nov 12  2012 .gitignore_global
+drwxr-xr-x    5 Matt  staff     170 Sep  4 11:57 .gradle
+-rw-r--r--    1 Matt  staff      27 Nov 12  2012 .hgignore_global
+-rw-------    1 Matt  staff      78 Sep 19 19:48 .lesshst
+drwxr-xr-x    3 Matt  staff     102 Jun 25 17:49 .macports
+-rw-------    1 Matt  staff     170 Aug 20 14:18 .mysql_history
+drwx------    8 Matt  staff     272 Jun 30 11:26 .nx
+drwxr-xr-x    3 Matt  staff     102 Sep 27 21:45 .oracle_jre_usage
+drwx------    3 Matt  staff     102 Jun 25 07:54 .qt
+-rw-------    1 Matt  staff    1024 Oct 17 23:20 .rnd
+-rw-------    1 Matt  staff     118 Aug 10 01:53 .serverauth.12688
+-rw-------    1 Matt  staff     118 Sep 25 00:44 .serverauth.2065
+-rw-------    1 Matt  staff      70 Oct 17 23:20 .serverauth.68818
+-rw-------    1 Matt  staff      12 Jul 20 23:04 .sh_history
+drwx------    8 Matt  staff     272 Oct  6 14:04 .ssh
+drwxr-xr-x    6 Matt  staff     204 Jun 17 10:13 .subversion
+drwxr-xr-x    6 Matt  staff     204 Oct  1 16:00 .thefuck
+drwxr-xr-x    3 Matt  staff     102 Sep 23 17:25 .vim
+-rw-------    1 Matt  staff   10989 Oct 19 12:42 .viminfo
+-rw-r--r--    1 Matt  staff      11 Sep 20 12:19 .vimrc
+drwxr-xr-x    6 Matt  staff     204 Oct 17 22:16 .wireshark
+drwxr-xr-x    7 Matt  staff     238 Aug 10 01:53 .wireshark-etc
+drwxr-xr-x   12 Matt  staff     408 Jun 25 07:52 .x2go
+drwxr-xr-x    4 Matt  staff     136 Jun 21 09:24 .x2goclient
+-rw-r--r--    1 Matt  staff  940264 Sep 25 12:54 9.25.15 12.53 PM.pklg
+-rw-r--r--    1 Matt  staff    1300 Sep 25 12:55 9.25.15 12.54 PM.pklg
+drwx------    5 Matt  staff     170 Jul 15 15:42 Applications
+drwxr-xr-x    4 Matt  staff     136 Aug 20 00:11 Applications (Parallels)
+drwx------    3 Matt  staff     102 Oct  9 19:32 Creative Cloud Files
+drwx------   57 Matt  staff    1938 Oct 19 12:47 Desktop
+drwx------   14 Matt  staff     476 Oct  5 16:26 Documents
+drwx------   46 Matt  staff    1564 Oct 18 22:16 Downloads
+drwxr-xr-x   12 Matt  staff     408 Oct 12 00:29 Git Repos
+drwx------   37 Matt  staff    1258 Oct 18 13:55 Google Drive
+drwx------   68 Matt  staff    2312 Oct  6 01:45 Library
+drwx------    7 Matt  staff     238 Sep 30 13:15 Movies
+drwx------    6 Matt  staff     204 Jul 15 14:58 Music
+drwx------    9 Matt  staff     306 Oct  9 10:47 Pictures
+drwxr-xr-x    5 Matt  staff     170 May 22 10:40 Public
+drwxr-xr-x    5 Matt  staff     170 Jun  4 15:07 SimUText
+drwxr-xr-x    2 Matt  staff      68 Sep 24 18:03 VirtualBox VMs
+-rw-r--r--    1 Matt  staff    1383 Aug  5 14:18 common-account
+-rw-r--r--    1 Matt  staff      54 Oct 15 23:06 file1.txt
+drwxr-xr-x   32 Matt  staff    1088 Sep 19 15:59 gumbo-parser
+lrwxr-xr-x    1 Matt  staff      26 Sep 19 19:50 gumbo.h -> /usr/local/include/gumbo.h
+lrwxr-xr-x    1 Matt  staff      41 Sep 19 20:02 gumboLib -> /usr/local/Cellar/gumbo-parser/0.9.3/lib/
+-rw-r--r--    1 Matt  staff  429037 Feb  1  2015 haproxy_documentation.txt
+lrwxr-xr-x    1 Matt  staff      33 Sep 25 10:04 libusb-1.0.0.dylib -> /usr/local/lib/libusb-1.0.0.dylib
+lrwxr-xr-x    1 Matt  staff      27 Sep 25 10:04 libusb-1.0.a -> /usr/local/lib/libusb-1.0.a
+lrwxr-xr-x    1 Matt  staff      31 Sep 25 10:04 libusb-1.0.dylib -> /usr/local/lib/libusb-1.0.dylib
+-rw-r--r--    1 Matt  staff    1241 Sep 24 16:58 usbinfo.txt
+quit
+n2-64-146:src Matt$ 

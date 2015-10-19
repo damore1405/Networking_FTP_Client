@@ -8,9 +8,10 @@ public class FTPClient {
     private enum FTPState {auth, passiveCommand, activeCommand}
     private enum IPState {ipv4, ipv6}
     private static final Logger log = Logger.getLogger("log");
+
     protected FTPCommandSession session;
     private String host;
-    private FTPState state = FTPState.auth;
+    private FTPState ftpState = FTPState.auth;
     private IPState ipState;
 
     /**
@@ -61,7 +62,7 @@ public class FTPClient {
 
         session.user(username);
         session.pass(password);
-        state = FTPState.passiveCommand;
+        ftpState = FTPState.passiveCommand;
         log.info("Login of user " + username + " successful");
 
     }
@@ -76,11 +77,17 @@ public class FTPClient {
      */
     public void ls(String dir) throws IOException, FTPException {
 
+        if (ftpState == FTPState.auth){
+            //Authentication has not happened yet
+            System.err.println("No user is logged in, please log into the server first");
+            return;
+        }
+
         //Initialize the port to a dummy number to be overwritton
         int port;
 
-        //Check to see what passive state the client is in
-        if (state == FTPState.passiveCommand) {
+        //Check to see what passive ftpState the client is in
+        if (ftpState == FTPState.passiveCommand) {
             String currentDir = session.pwd();
 
             //Make a decision to use IPv4 or v6 depending on the mode set from the constructor
@@ -118,7 +125,7 @@ public class FTPClient {
             return;
 
         }
-        else if (state == FTPState.activeCommand) {
+        else if (ftpState == FTPState.activeCommand) {
             String currentDir = session.pwd();
             ServerSocket serverSocket = new ServerSocket(0);
 
@@ -163,20 +170,26 @@ public class FTPClient {
      * @throws FTPException
      */
     public void getFile(String filename) throws IOException, FTPException {
+
+        if (ftpState == FTPState.auth){
+            //Authentication has not happened yet
+            System.err.println("No user is logged in, please log into the server first");
+            return;
+        }
+
         int port;
         File file = new File(filename);
 
         //Check to see if the file exists or not, and create one if it doesn't.
         if (file.exists()) {
-            System.err.println("File already exists, cannot overwrite");
-            return;
+            throw new FTPException("File already exists, cannot overwrite");
         } else if (!file.exists()) {
             file.createNewFile();
         }
 
         FileWriter fileWriter = new FileWriter(filename);
 
-        if (state == FTPState.passiveCommand) {
+        if (ftpState == FTPState.passiveCommand) {
 
             //Set the mode of the ip connection
             port = passIpConn();
@@ -210,7 +223,7 @@ public class FTPClient {
             return;
 
         }
-        else if (state == FTPState.activeCommand) {
+        else if (ftpState == FTPState.activeCommand) {
             //Create a server socket and pass the socket that was crated to the active port connecter
             ServerSocket serverSocket = new ServerSocket(0);
             actvIpConn(serverSocket.getLocalPort());
@@ -245,7 +258,7 @@ public class FTPClient {
             return;
 
         } else {
-            //If the file was created in prep for file io, but there was a state issue for whatever reason, delete it
+            //If the file was created in prep for file io, but there was a ftpState issue for whatever reason, delete it
             file.delete();
             fileWriter.close();
             return;
@@ -253,17 +266,22 @@ public class FTPClient {
     }
 
     /**
-     * Swaps the mode of the client from passive to active or vice versa depending on the current state. Used when the client
+     * Swaps the mode of the client from passive to active or vice versa depending on the current ftpState. Used when the client
      * uses the "passive" command
      */
     public void passive() {
-        if (state == FTPState.passiveCommand) {
-            state = FTPState.activeCommand;
+        if (ftpState == FTPState.auth){
+            //Authentication has not happened yet
+            System.err.println("No user is logged in, please log into the server first");
+            return;
+        }
+        if (ftpState == FTPState.passiveCommand) {
+            ftpState = FTPState.activeCommand;
             System.out.println("State has changed to active...");
             log.info("State has changed to active...");
             return;
-        } else if (state == FTPState.activeCommand) {
-            state = FTPState.passiveCommand;
+        } else if (ftpState == FTPState.activeCommand) {
+            ftpState = FTPState.passiveCommand;
             System.out.println("State has changed to passive...");
             log.info("State has changed to passive");
             return;
@@ -274,7 +292,12 @@ public class FTPClient {
 
     /** pwd client implementation, simply calls the corresponding method in the session **/
     public void pwd() throws IOException, FTPException {
-        System.out.print(session.pwd());
+        if (ftpState == FTPState.auth){
+            //Authentication has not happened yet
+            System.err.println("No user is logged in, please log into the server first");
+            return;
+        }
+        System.out.println(session.pwd());
     }
 
     /** help client implementation, simply calls the corresponding method in the session **/
@@ -299,13 +322,14 @@ public class FTPClient {
      */
     public void cd(String dirName) throws IOException, FTPException {
         session.cwd(dirName);
+        System.out.println("moved to: "+session.pwd());
         session.flushReader();
     }
 
     /** cdup client implementation, simply calls the corresponding method in the session **/
     public void cdup() throws IOException, FTPException {
         session.cdup();
-        System.out.println(session.pwd());
+        System.out.println("Moved to: "+session.pwd());
         session.flushReader();
     }
 
@@ -351,13 +375,12 @@ public class FTPClient {
      * @throws FTPException
      */
     private void actvIpConn(int port) throws IOException, FTPException {
-        if(ipState == IPState.ipv4) {
+        if (ipState == IPState.ipv4) {
             session.port(port);
-        }else if(ipState == IPState.ipv6){
+        } else if (ipState == IPState.ipv6) {
             session.eprt(port);
         }
     }
-
 
 
 

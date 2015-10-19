@@ -1,0 +1,60 @@
+Please enter username
+derp
+Please enter password
+paaaa
+not logged in: invalid username or password
+login
+Please enter username
+cs472
+Please enter password
+password
+Logged in as cs472
+ls
+Contents of directory: /home/cs472
+-rw-r--r--    1 1001     1001          282 Oct 17 16:50 desktop.ini
+-rw-r--r--    1 1001     1001           54 Oct 16 03:06 file1.txt
+-rw-r--r--    1 1001     1001           13 Oct 05 03:52 file2.txt
+drwxr-xr-x    2 1001     1001         4096 Oct 19 16:03 skerr
+passive
+State has changed to active...
+ls
+Contents of directory: /home/cs472
+-rw-r--r--    1 1001     1001          282 Oct 17 16:50 desktop.ini
+-rw-r--r--    1 1001     1001           54 Oct 16 03:06 file1.txt
+-rw-r--r--    1 1001     1001           13 Oct 05 03:52 file2.txt
+drwxr-xr-x    2 1001     1001         4096 Oct 19 16:03 skerr
+get file1.txt
+File: file1.txt transferred succesfully
+passive
+State has changed to passive...
+get file2.txt
+File: file2.txt transferred succesfully
+ls
+Contents of directory: /home/cs472
+-rw-r--r--    1 1001     1001          282 Oct 17 16:50 desktop.ini
+-rw-r--r--    1 1001     1001           54 Oct 16 03:06 file1.txt
+-rw-r--r--    1 1001     1001           13 Oct 05 03:52 file2.txt
+drwxr-xr-x    2 1001     1001         4096 Oct 19 16:03 skerr
+cdup
+Moved to: /home
+ls
+Contents of directory: /home
+drwxr-xr-x    3 1001     1001         4096 Oct 19 16:03 cs472
+drwxr-xr-x    4 1000     1000         4096 Oct 17 16:43 ubuntu
+cd ubuntu
+moved to: /home/ubuntu
+ls
+Contents of directory: /home/ubuntu
+-rw-rw-r--    1 1000     1000           54 Oct 03 04:35 file1
+get file1
+File: file1 transferred succesfully
+help
+214-The following commands are recognized.
+ ABOR ACCT ALLO APPE CDUP CWD  DELE EPRT EPSV FEAT HELP LIST MDTM MKD
+ MODE NLST NOOP OPTS PASS PASV PORT PWD  QUIT REIN REST RETR RMD  RNFR
+ RNTO SITE SIZE SMNT STAT STOR STOU STRU SYST TYPE USER XCUP XCWD XMKD
+ XPWD XRMD
+214 Help OK.
+
+quit
+n2-64-146:src Matt$ 
