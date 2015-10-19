@@ -11,12 +11,14 @@ public class driver {
 
     public static void main(String[] args) {
 
+        // Init the scanner for input, and the usrname and password
         Scanner in = new Scanner(System.in);
         String username;
         String password;
         FTPClient ftpClient = null;
 
         try {
+            // Preform argument verification and preform actions accordingly
             switch (args.length) {
                 case 2:
                     //We have a server name and a log file
@@ -39,6 +41,7 @@ public class driver {
                         System.exit(1);
                     }
                     break;
+                //When the arguments are not given correctly, simply print the usage
                 default:
                     printUsage();
             }
@@ -46,13 +49,15 @@ public class driver {
             e.printStackTrace();
         }
 
-//			System.out.println("Please enter username");
-//			username = in.nextLine();
-//			System.out.println("Please enter password");
-//			password = in.nextLine();
+
+			System.out.println("Please enter username");
+			username = in.nextLine();
+			System.out.println("Please enter password");
+			password = in.nextLine();
 
         try {
-            ftpClient.login("msd88", "Ophirril594");
+//            ftpClient.login("msd88", "Ophirril594");
+            ftpClient.login(username,password);
         } catch (IOException e) {
             e.printStackTrace();
         } catch (FTPException e) {
@@ -126,11 +131,6 @@ public class driver {
             }
         }
 
-
-        //Valid arguments, ask now as the user for their username and password
-
-
-        System.out.println();
     }
 
     /*
@@ -139,7 +139,15 @@ public class driver {
      */
     private static void printUsage() {
         log.warning("Invalid input entered!");
-        System.out.println("This will eventually be the help script :3");
+        System.out.println(
+                "ls- Prints the listing of the current directory\n" +
+                "pwd- Prints the path of the current directory\n" +
+                "help- Gets and prints out the servers help command\n" +
+                "passive- Swaps the mode from passive to active and vice versa\n" +
+                "get- Downlaods a given file from the server\n" +
+                "cd- calls the given directory\n" +
+                "cdup- moves up one directory on the file server\n" +
+                "quit- quits the ftp client and sends the appropriate command to the server");
         System.exit(1);
     }
 

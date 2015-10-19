@@ -17,7 +17,7 @@ public class FTPCommandSession{
 	private PrintWriter socketWriter;
 
 	/**
-	 *
+	 * Constructor to be used with just a hostname, sets the command port to its default value of 21
 	 * @param hostname
 	 */
 	public FTPCommandSession(String hostname){
@@ -26,7 +26,8 @@ public class FTPCommandSession{
 	}
 
 	/**
-	 *
+	 *	Constructor to be used when the custom port opeion is set, initialized the object like normal
+	 *	but with the additional port setting
 	 * @param hostname
 	 * @param commandport
 	 */
@@ -42,14 +43,19 @@ public class FTPCommandSession{
 	public void openConnection() throws  IOException{
 		//Open the socket, and open up an input and output stream for it
 		commandSocket = new Socket(hostname, commandPort);
+
+		//Log that the socket to the host has been opened
 		log.info("Socket connection to " + hostname + " opened..");
+
+		//Initialize the socket writer and response reader to send and receive information from the socket
 		socketWriter = new PrintWriter(commandSocket.getOutputStream(), true);
 		responseReader = new BufferedReader(new InputStreamReader(commandSocket.getInputStream()));
+
 		log.info(responseReader.readLine());
 	}
 
 	/**
-	 *the
+	 *	the USER command to be used for user authentication
 	 *
 	 * @param username the username of the user
 	 * @throws IOException
@@ -129,7 +135,7 @@ public class FTPCommandSession{
 		String[] splitResponse = responseString.split(" ");
 		responseCode = Integer.parseInt(splitResponse[0]);
 		processResponseCode(responseCode);
-		return ;
+		return;
 	}
 
 	/**
@@ -155,6 +161,7 @@ public class FTPCommandSession{
 
 		processResponseCode(responseCode);
 
+		// Parse out the port from the server response by ridding it of parentheses and bars.
 		responsePort = Integer.parseInt(passiveResponse.replace("(","").replace(")","").replace("|",""));
 
 		return responsePort;
@@ -205,10 +212,12 @@ public class FTPCommandSession{
 		String[] splitResponse = responseString.split(" ");
 		responseCode = Integer.parseInt(splitResponse[0]);
 		processResponseCode(responseCode);
-		
+
+		//Fiddling with substrings to pull out the information i need, get just the list of ip and ports
 		portInfo = splitResponse[splitResponse.length - 1];
 		portInfo = portInfo.substring(1, portInfo.length() - 2);
-		
+
+		//Do the math on the p1 and p2 arguments to get the correct port number...
 		serverPort = ( Integer.parseInt(portInfo.split(",")[4]) * 256 ) + Integer.parseInt(portInfo.split(",")[5]);
 		
 		
@@ -229,6 +238,10 @@ public class FTPCommandSession{
 	public void port(int port)throws IOException, FTPException{
 		int responseCode;
 		String responseString;
+		/*
+			Build the port command by splitting the port number into two hex trings then parsing it down into the
+			correct format to be sent over the PORT command.
+		*/
 		String command = "PORT " 
 						+ commandSocket.getLocalAddress().getHostAddress().replace(".", ",") + ","
 						+ Integer.parseInt(Integer.toHexString(port).substring(0, 2), 16) + ","

@@ -77,7 +77,7 @@ public class FTPClient {
     public void ls() throws IOException, FTPException {
 
         //Initialize the port to a dummy number to be overwritton
-        int port = -1;
+        int port;
 
         //Check to see what passive state the client is in
         if (state == FTPState.passiveCommand) {
@@ -111,6 +111,7 @@ public class FTPClient {
             while (dirReader.ready()) { /* While there's something to read */
                 System.out.println(dirReader.readLine());
             }
+
             // Flush the buffer, close the socket, and return.
             session.flushReader();
             listSocket.close();
@@ -124,12 +125,14 @@ public class FTPClient {
             //Check for ipv4 vs ipv6
             actvIpConn(serverSocket.getLocalPort());
 
-            System.out.println(serverSocket.getLocalPort());
+            //Send the list command
             session.list();
+
             Socket listSocket = serverSocket.accept();
             BufferedReader dirReader = new BufferedReader(new InputStreamReader(listSocket.getInputStream()));
             System.out.println("Contents of directory: " + currentDir);
 
+            //Implementation of a timeout, wait 5 seconds for the buffered reader to receive a response, if not, throw a new exception
             for(int i = 0; i <= 10 && !dirReader.ready(); ++i){
 //              Wait 5 seconds max while waiting for a response
                 if(i == 10) throw new FTPException("Timeout");
@@ -144,6 +147,7 @@ public class FTPClient {
                 System.out.println(dirReader.readLine());
             }
 
+            //Flush the buffer, and close the sockets in use
             session.flushReader();
             listSocket.close();
             serverSocket.close();
@@ -151,9 +155,18 @@ public class FTPClient {
         }
     }
 
+    /**
+     * Get file implementation which sends a RETR request and writes the file to the local disk
+     *
+     * @param filename The name of the file to be requested from he server
+     * @throws IOException
+     * @throws FTPException
+     */
     public void getFile(String filename) throws IOException, FTPException {
-        int port = -1;
+        int port;
         File file = new File(filename);
+
+        //Check to see if the file exists or not, and create one if it doesn't.
         if (file.exists()) {
             throw new IOException("File already exists, cannot overwrite");
         } else if (!file.exists()) {
@@ -164,37 +177,51 @@ public class FTPClient {
 
         if (state == FTPState.passiveCommand) {
 
+            //Set the mode of the ip connection
             port = passIpConn();
+
+            //Make the connection to the port
             Socket listSocket = new Socket(host, port);
+
+            //Send the actual request from the session
             session.retr(filename);
+
             BufferedReader dirReader = new BufferedReader(new InputStreamReader(listSocket.getInputStream()));
 
+            //Read in the file line by line into the newly created local one.
             while (dirReader.ready()) {
                 fileWriter.write(dirReader.readLine());
                 fileWriter.write("\n");
                 fileWriter.flush();
             }
 
+            //Flush the reader and close any sockets in use
             session.flushReader();
             fileWriter.close();
             listSocket.close();
             return;
 
-        } else if (state == FTPState.activeCommand) {
-
+        }
+        else if (state == FTPState.activeCommand) {
+            //Create a server socket and pass the socket that was crated to the active port connecter
             ServerSocket serverSocket = new ServerSocket(0);
             actvIpConn(serverSocket.getLocalPort());
 
+            //Call the retr command from the session
             session.retr(filename);
+
+
             Socket listSocket = serverSocket.accept();
             BufferedReader dirReader = new BufferedReader(new InputStreamReader(listSocket.getInputStream()));
 
+            //Read in the file line by line into the new local one that was created
             while (dirReader.ready()) {
                 fileWriter.write(dirReader.readLine());
                 fileWriter.write("\n");
                 fileWriter.flush();
             }
 
+            //Close all sockets, and flush the reader
             listSocket.close();
             serverSocket.close();
             fileWriter.close();
@@ -202,12 +229,17 @@ public class FTPClient {
             return;
 
         } else {
+            //If the file was created in prep for file io, but there was a state issue for whatever reason, delete it
             file.delete();
             fileWriter.close();
             return;
         }
     }
 
+    /**
+     * Swaps the mode of the client from passive to active or vice versa depending on the current state. Used when the client
+     * uses the "passive" command
+     */
     public void passive() {
         if (state == FTPState.passiveCommand) {
             state = FTPState.activeCommand;
@@ -223,24 +255,46 @@ public class FTPClient {
             return;
         }
     }
+
+    /** pwd client implementation, simply calls the corresponding method in the session **/
     public void pwd() throws IOException, FTPException {
         System.out.print(session.pwd());
     }
 
+    /** help client implementation, simply calls the corresponding method in the session **/
     public void help() throws IOException, FTPException {
         String response = session.help();
         System.out.println(response);
     }
+
+    /** quit client implementation, simply calls the corresponding method in the session **/
     public void quit() throws IOException {
         session.quit();
     }
+
+    /**
+     * Uses the given input param to call a directory on the server.
+     *
+     * @param dirName the name of the directory to be called
+     * @throws IOException
+     * @throws FTPException
+     */
     public void cd(String dirName) throws IOException, FTPException {
         session.cwd(dirName);
     }
+
+    /** cdup client implementation, simply calls the corresponding method in the session **/
     public void cdup() throws IOException, FTPException {
         session.cdup();
     }
 
+    /**
+     * Checks to see if the current ip address for the connection is v4 or v6 and sets the mode appropriately.
+     *
+     * @param hostname The hostname to be searched by the inetaddress class
+     * @return
+     * @throws UnknownHostException
+     */
     private IPState getIpAddressType(String hostname) throws UnknownHostException {
         InetAddress ipVersion = InetAddress.getByName(hostname);
         if (ipVersion instanceof Inet6Address) {
@@ -250,6 +304,14 @@ public class FTPClient {
         }
         return null;
     }
+
+    /**
+     * Calls the appropriate passive command depending on ip configuration
+     *
+     * @return The port that the server responded with after calling a pasv command
+     * @throws IOException
+     * @throws FTPException
+     */
     private int passIpConn() throws IOException, FTPException {
         int port = -1;
         if(ipState == IPState.ipv4){
@@ -260,6 +322,13 @@ public class FTPClient {
         }
         return port;
     }
+
+    /**
+     * Calls the appropriate active command depending on ip configuration
+     * @param port The port to be used to init the active connection
+     * @throws IOException
+     * @throws FTPException
+     */
     private void actvIpConn(int port) throws IOException, FTPException {
         if(ipState == IPState.ipv4) {
             session.port(port);
