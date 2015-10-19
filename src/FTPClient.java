@@ -22,7 +22,7 @@ public class FTPClient {
      * FTPClient constructor, Creates a client and ftp session to be used by a driver, taking in only
      * a host name and using the default port of 21
      */
-    public FTPClient(String hostname) throws IOException, UnknownHostException {
+    public FTPClient(String hostname) throws IOException {
         ipState = getIpAddressType(hostname);
         host = hostname;
         session = new FTPCommandSession(hostname);
@@ -40,7 +40,7 @@ public class FTPClient {
      * as well as a custom port to be used by the session.
      *
      */
-    public FTPClient(String hostname, int port) throws IOException, UnknownHostException {
+    public FTPClient(String hostname, int port) throws IOException {
         ipState = getIpAddressType(hostname);
         host = hostname;
         session = new FTPCommandSession(hostname, port);
@@ -74,7 +74,7 @@ public class FTPClient {
      * Lists out the files in the current directory on the server depending on the PWD.
      *
      */
-    public void ls() throws IOException, FTPException {
+    public void ls(String dir) throws IOException, FTPException {
 
         //Initialize the port to a dummy number to be overwritton
         int port;
@@ -91,7 +91,7 @@ public class FTPClient {
             log.info("Socket at " + port + " opened");
 
             //Call the LIST command on the underlying session object
-            session.list();
+            session.list(dir);
 
             BufferedReader dirReader = new BufferedReader(new InputStreamReader(listSocket.getInputStream()));
             System.out.println("Contents of directory: " + currentDir); /* Let the user know the contents of the current directory  */
@@ -126,7 +126,7 @@ public class FTPClient {
             actvIpConn(serverSocket.getLocalPort());
 
             //Send the list command
-            session.list();
+            session.list(dir);
 
             Socket listSocket = serverSocket.accept();
             BufferedReader dirReader = new BufferedReader(new InputStreamReader(listSocket.getInputStream()));
@@ -281,11 +281,13 @@ public class FTPClient {
     public void help() throws IOException, FTPException {
         String response = session.help();
         System.out.println(response);
+        session.flushReader();
     }
 
     /** quit client implementation, simply calls the corresponding method in the session **/
     public void quit() throws IOException {
         session.quit();
+        log.info("Quit command recieved... exiting...");
     }
 
     /**
@@ -297,11 +299,14 @@ public class FTPClient {
      */
     public void cd(String dirName) throws IOException, FTPException {
         session.cwd(dirName);
+        session.flushReader();
     }
 
     /** cdup client implementation, simply calls the corresponding method in the session **/
     public void cdup() throws IOException, FTPException {
         session.cdup();
+        System.out.println(session.pwd());
+        session.flushReader();
     }
 
     /**

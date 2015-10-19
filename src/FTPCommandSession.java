@@ -107,7 +107,7 @@ public class FTPCommandSession{
 		int responseCode;
 		String responseString;
 		
-		socketWriter.print("CDUP " + FTP_END_COMMAND);
+		socketWriter.print("CDUP" + FTP_END_COMMAND);
 		socketWriter.flush();
 		responseString = responseReader.readLine();
 		
@@ -128,7 +128,7 @@ public class FTPCommandSession{
 		int responseCode;
 		String responseString;
 		
-		socketWriter.print("CDUP "+ directory + FTP_END_COMMAND);
+		socketWriter.print("CWD "+ directory + FTP_END_COMMAND);
 		socketWriter.flush();
 		responseString = responseReader.readLine();
 		
@@ -208,7 +208,8 @@ public class FTPCommandSession{
 		socketWriter.flush();
 		responseString = responseReader.readLine();
 		log.info(responseString);
-		
+
+		//Split the response on spaces and get the response code
 		String[] splitResponse = responseString.split(" ");
 		responseCode = Integer.parseInt(splitResponse[0]);
 		processResponseCode(responseCode);
@@ -261,17 +262,23 @@ public class FTPCommandSession{
 
 	/**
 	 *
+	 * @param dir The optional directory to be listed, can be null, if so, prints out current directory
 	 * @throws IOException
 	 * @throws FTPException
 	 *
 	 * Implementation of the LIST command, lists out the contents of the current directory.
 	 */
-	public void list() throws IOException, FTPException{
+	public void list(String dir) throws IOException, FTPException{
 		int responseCode;
 		String responseString;
-		
-		socketWriter.print("LIST" + FTP_END_COMMAND);
-		socketWriter.flush();
+		if(dir == null){
+			socketWriter.print("LIST" + FTP_END_COMMAND);
+			socketWriter.flush();
+		}
+		else {
+			socketWriter.print("LIST " + dir + FTP_END_COMMAND);
+			socketWriter.flush();
+		}
 		responseString = responseReader.readLine();
 		log.info(responseString);
 		String[] splitResponse = responseString.split(" ");
@@ -427,11 +434,11 @@ public class FTPCommandSession{
 	 * @throws FTPException
 	 */
 	public void flushReader() throws IOException, FTPException {
-
-		for (int i = 0; i <= 5 && !responseReader.ready(); ++i){
-			if(i == 5) throw new FTPException("Response Timeout");
+		//timeout for loop to wait for response reader to be reader
+		for (int i = 0; i <= 10 && !responseReader.ready(); ++i){
+			if(i == 10) return; /*throw new FTPException("Response Timeout");*/
 			try {
-				Thread.sleep(1000);
+				Thread.sleep(250);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
